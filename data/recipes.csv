@@ -1,0 +1,16 @@
+Meal,Type,Diet,Cuisine,Calories,Protein,Carbs,Fat,CookingTime,Cost,Difficulty
+Oats with Milk,Breakfast,Vegetarian,Indian,320,15,45,8,10,Low,Easy
+Poha,Breakfast,Vegetarian,Indian,280,8,50,6,15,Low,Easy
+Idli Sambar,Breakfast,Vegetarian,South Indian,350,12,60,5,25,Low,Medium
+Upma,Breakfast,Vegetarian,South Indian,300,9,48,7,20,Low,Easy
+Vegetable Sandwich,Breakfast,Vegetarian,Indian,330,11,42,9,10,Low,Easy
+Paneer Salad,Lunch,Vegetarian,Indian,450,30,20,18,15,Medium,Easy
+Dal Rice,Lunch,Vegetarian,Indian,500,20,65,12,30,Low,Easy
+Vegetable Biryani,Lunch,Vegetarian,Indian,600,15,78,18,40,Medium,Medium
+Rajma Rice,Lunch,Vegetarian,North Indian,550,22,72,10,35,Low,Easy
+Grilled Paneer,Dinner,Vegetarian,Indian,400,35,15,16,20,Medium,Easy
+Chapati Curry,Dinner,Vegetarian,Indian,500,18,55,15,30,Low,Easy
+Vegetable Soup,Dinner,Vegetarian,Universal,250,8,20,6,20,Low,Easy
+Fruit Bowl,Snack,Vegetarian,Universal,180,2,35,1,5,Low,Easy
+Greek Yogurt,Snack,Vegetarian,Universal,150,10,8,4,2,Medium,Easy
+Mixed Nuts,Snack,Vegetarian,Universal,220,7,10,18,1,High,Easy
