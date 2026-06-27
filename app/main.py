@@ -2,6 +2,7 @@ from fastapi import FastAPI
 
 from app.core.config import settings
 from app.core.database import engine
+from app.core.db import Base
 from app.core.logger import logger
 
 app = FastAPI(
@@ -12,10 +13,9 @@ app = FastAPI(
 
 @app.on_event("startup")
 def startup():
-    connection = engine.connect()
-    connection.close()
+    Base.metadata.create_all(bind=engine)
 
-    logger.info("Database connected successfully")
+    logger.info("Database initialized")
     logger.info("MealPlannerAI started successfully")
 
 
