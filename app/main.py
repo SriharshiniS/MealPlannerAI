@@ -1,3 +1,5 @@
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 
 from app.core.config import settings
@@ -5,26 +7,32 @@ from app.core.database import engine
 from app.core.db import Base
 from app.core.logger import logger
 
-app = FastAPI(
-    title=settings.APP_NAME,
-    version=settings.APP_VERSION
-)
+# Import models so SQLAlchemy knows about them
+from app.models import User
 
 
-@app.on_event("startup")
-def startup():
+@asynccontextmanager
+async def lifespan(app: FastAPI):
     Base.metadata.create_all(bind=engine)
 
     logger.info("Database initialized")
-    logger.info("MealPlannerAI started successfully")
+    logger.info("MealPlannerAI started")
+
+    yield
+
+    logger.info("MealPlannerAI stopped")
+
+
+app = FastAPI(
+    title=settings.APP_NAME,
+    version=settings.APP_VERSION,
+    lifespan=lifespan,
+)
 
 
 @app.get("/")
 def root():
-    logger.info("Home endpoint accessed")
-
     return {
-        "message": f"Welcome to {settings.APP_NAME} API",
+        "message": f"Welcome to {settings.APP_NAME}",
         "version": settings.APP_VERSION,
-        "debug": settings.DEBUG
     }
